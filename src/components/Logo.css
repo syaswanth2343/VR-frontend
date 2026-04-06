@@ -1,0 +1,97 @@
+:root {
+  --logo-small-size: 32px;
+  --logo-medium-size: 56px;
+  --logo-large-height: 120px;
+  --logo-large-width: auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, filter;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.logo-img {
+  height: 84px;
+  width: 84px;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  transition: filter 0.2s, box-shadow 0.2s;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  background: var(--surface);
+  padding: 8px;
+}
+
+/* Adapt logo colors for dark/light mode */
+:root .logo-img {
+  filter: none;
+}
+.theme-dark .logo-img {
+  filter: brightness(1.15) contrast(1.15) drop-shadow(0 0 8px #222);
+  border: 2px solid #2d3748;
+  background: #23263a;
+}
+.theme-light .logo-img {
+  filter: brightness(0.98) contrast(1.08);
+  border: 2px solid #e2e8f0;
+  background: #fff;
+}
+
+/* Size variants */
+.logo-small .logo-mark {
+  width: var(--logo-small-size);
+  height: var(--logo-small-size);
+}
+
+.logo-medium .logo-mark {
+  width: var(--logo-medium-size);
+  height: var(--logo-medium-size);
+}
+
+.logo-large .logo-mark {
+  width: var(--logo-large-width);
+  height: var(--logo-large-height);
+}
+
+.logo-xlarge .logo-mark {
+  width: 160px;
+  height: 96px;
+}
+
+/* Header-specific overrides: keep header logos visually smaller */
+.header .logo-container.logo-small .logo-mark,
+.header .logo-container.logo-medium .logo-mark {
+  height: 48px;
+  width: auto;
+}
+
+.header .logo-container.logo-large .logo-mark {
+  height: 72px;
+  width: auto;
+  max-width: 480px;
+}
+
+/* Responsive tweak for very small screens */
+@media (max-width: 640px) {
+  .logo-large .logo-mark {
+    height: 48px;
+  }
+}
+
+/* hover micro animation */
+.logo-container:hover .logo-mark {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-deep);
+}

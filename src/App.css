@@ -1,0 +1,100 @@
+#root {
+  max-width: min(1280px, 96%);
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 5.5rem;
+  padding: 0.75rem;
+  will-change: filter, transform;
+  transition: transform 240ms ease, filter 240ms ease;
+}
+.logo:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 8px 30px rgba(37,99,235,0.12));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 8px 30px rgba(97,218,251,0.12));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.app {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: block;
+  background: var(--bg);
+}
+
+/* global back button placed at the top-left when history exists */
+.btn-global-back {
+  /* fixed back button used by the App navigation history stack */
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-global-back:hover {
+  opacity: 0.9;
+  transform: translateX(-2px);
+}
+
+.btn-back-to-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+  color: var(--on-primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: inherit;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.btn-back-to-home:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-deep);
+}
+.btn-global-back:focus {
+  outline: 2px solid var(--focus-ring);
+}
+
+.card {
+  padding: var(--space-lg);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.read-the-docs {
+  color: var(--muted);
+}

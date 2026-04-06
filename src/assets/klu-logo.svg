@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="KLU logo">
+  <defs>
+    <linearGradient id="kGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#2563EB" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#1E40AF" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="18" fill="url(#kGrad)" />
+  <g transform="translate(20,28)" fill="currentColor" font-family="Inter,Segoe UI,Arial" font-weight="700">
+    <text x="0" y="46" font-size="48">K</text>
+    <text x="44" y="46" font-size="20">LU</text>
+  </g>
+</svg>

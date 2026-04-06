@@ -1,0 +1,146 @@
+.header {
+  background: var(--surface);
+  padding: calc(var(--space-sm) + 18px) 0; /* more vertical space for larger logo */
+  min-height: 88px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* let items wrap instead of overflowing */
+  justify-content: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s ease, transform 0.12s ease;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: var(--primary-600);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+}
+
+/* Header icons */
+.header-actions-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* after removing search/profile, wrapper remains for theme toggle only */
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.18s ease;
+  border: 1px solid var(--border);
+}
+
+.theme-toggle {
+  font-size: 16px;
+  line-height: 1;
+  background: transparent;
+}
+
+.icon-btn img {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+}
+
+/* search/profile icons no longer used but rule kept in case of future icons */
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-deep);
+  border-color: rgba(91,141,239,0.14);
+}
+
+/* Reduce visual noise on small screens */
+@media (max-width: 480px) {
+  .header { padding: clamp(0.5rem, 1.5vw, 1.2rem) 0; }
+  .header-container { gap: clamp(0.5rem, 2vw, 1rem); }
+}
+
+/* light theme header gradient */
+.theme-light .header {
+  background: linear-gradient(135deg, #ffffff 0%, #e0f0ff 100%);
+}
+
+/* yellow theme header gradient */
+.theme-yellow .header {
+  /* soften into the yellow background color */
+  background: linear-gradient(135deg, #fff9db 0%, #fff3bf 100%);
+}
+
+/* slightly deeper card shadows in light mode */
+.theme-light .topic-card,
+.theme-light .card,
+.theme-light .panel {
+  box-shadow: 0 12px 36px rgba(16,24,40,0.12);
+}
+

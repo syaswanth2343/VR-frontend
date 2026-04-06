@@ -1,0 +1,211 @@
+.role-selector-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 20px;
+}
+
+.role-selector-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  z-index: 0;
+}
+
+.role-selector-background::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(ellipse, var(--primary-50) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.role-selector-modal {
+  position: relative;
+  z-index: 10;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 48px 56px;
+  box-shadow: var(--shadow-deep);
+  border: 1px solid var(--border);
+  min-width: 400px;
+  max-width: 96%;
+  text-align: center;
+  animation: modalSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.role-selector-title {
+  color: var(--text);
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 36px 0;
+  letter-spacing: -0.02em;
+}
+
+.role-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.role-btn {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: inherit;
+}
+
+.admin-btn {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+}
+
+.admin-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(220, 38, 38, 0.35);
+}
+
+.admin-btn.active {
+  transform: scale(1.02);
+  box-shadow: 0 8px 28px rgba(220, 38, 38, 0.4);
+}
+
+.student-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+  color: var(--on-primary);
+  box-shadow: 0 4px 20px rgba(0, 87, 255, 0.25);
+}
+
+.student-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 87, 255, 0.35);
+}
+
+.student-btn.active {
+  transform: scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 87, 255, 0.4);
+}
+
+.theme-yellow .student-btn {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.3);
+}
+
+.theme-yellow .student-btn:hover {
+  box-shadow: 0 12px 32px rgba(217, 119, 6, 0.4);
+}
+
+.auth-buttons-container {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  animation: slideIn 0.35s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-btn {
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.sign-up-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+  color: var(--on-primary);
+}
+
+.sign-up-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sign-in-btn {
+  background: transparent;
+  color: var(--primary);
+}
+
+.sign-in-btn:hover {
+  background: var(--primary-50);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .role-selector-modal {
+    min-width: 90%;
+    padding: 36px 28px;
+  }
+
+  .role-selector-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  .role-btn {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-selector-modal {
+    padding: 28px 20px;
+  }
+
+  .role-selector-title {
+    font-size: 20px;
+  }
+
+  .role-btn {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+}
