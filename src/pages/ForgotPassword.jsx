@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { API_BASE_URL as API_BASE } from '../config/apiBase';
 import './ForgotPassword.css';
 
 function ForgotPassword({ onBack }) {
-  const API_BASE = import.meta.env.VITE_API_BASE || '/api';
   const [step, setStep] = useState(1); // 1: email verification, 2: OTP verification, 3: reset password
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { API_BASE_URL as API_BASE } from '../config/apiBase';
 import './CaptchaVerification.css';
 
 function CaptchaVerification({ onVerify }) {
-  const API_BASE = import.meta.env.VITE_API_BASE || '/api';
   const [captchaCode, setCaptchaCode] = useState('');
   const [userInput, setUserInput] = useState('');
   const [challenge, setChallenge] = useState(null);

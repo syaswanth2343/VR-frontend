@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import RegisteredStudents from './RegisteredStudents';
 import { topics as topicsApi, pdfs as pdfsApi, users, loginHistory, reports } from '../api/databaseAPI';
+import { API_BASE_URL as API_BASE } from '../config/apiBase';
 import './AdminDashboard.css';
 
 function AdminDashboard({ onLogout, adminName, adminId }) {
-  const API_BASE = import.meta.env.VITE_API_BASE || '/api';
   const backendOrigin = API_BASE.startsWith('http') ? API_BASE.replace(/\/api\/?$/, '') : '';
   const toBackendAbsoluteUrl = (url) => {
     if (!url) return url;

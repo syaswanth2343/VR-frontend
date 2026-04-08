@@ -1,7 +1,6 @@
 // API configuration and utility functions for database operations
 
-// allow overriding via Vite env (VITE_API_BASE), otherwise fall back to same-origin `/api`
-const API_BASE_URL = import.meta.env.VITE_API_BASE || '/api';
+import { API_BASE_URL } from '../config/apiBase';
 
 // ==================== LOGIN HISTORY FUNCTIONS ====================
 

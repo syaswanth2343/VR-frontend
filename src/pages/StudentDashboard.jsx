@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { topics as topicsApi, pdfs as pdfsApi, users, enrollments as apiEnrollments } from '../api/databaseAPI';
 import { useSavedItems, useWishlist, useLoginHistory } from '../hooks/useDatabase';
+import { API_BASE_URL as API_BASE } from '../config/apiBase';
 import './StudentDashboard.css';
 
 function StudentDashboard({ onLogout, studentUsername, studentId }) {
-  const API_BASE = import.meta.env.VITE_API_BASE || '/api';
   const backendOrigin = API_BASE.startsWith('http') ? API_BASE.replace(/\/api\/?$/, '') : '';
   const toBackendAbsoluteUrl = (url) => {
     if (!url) return url;
